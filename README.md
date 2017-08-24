@@ -1,7 +1,7 @@
 # Android Utils:
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)
 
-A set of util classes to hopefully help you save your time. 
+A set of utility classes to hopefully help you save your time. 
 
 #### Version 1.x
 
@@ -115,6 +115,8 @@ and for Ivy:
     <artifact name=''android-utils'' ext='pom' ></artifact>
 </dependency>
 ```
+
+<a href='https://bintray.com/gdelgado/android/android-utils?source=watch' alt='Get automatic notifications about new "android-utils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
 ## Dependencies
 
