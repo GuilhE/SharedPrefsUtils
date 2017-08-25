@@ -85,7 +85,7 @@ Will throw `JsonParseException`.
 
 ## Binaries
 
-Binaries and dependency information for Gradle, Maven, Ivy and others can be found at [https://search.maven.org](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22).
+Binaries and dependency information for Gradle, Maven, Ivy and others can be found at [https://search.maven.org](https://search.maven.org/#artifactdetails%7Ccom.github.guilhe%7Candroid-utils%7C1.0.0%7Caar).
 
 For Gradle:
 
