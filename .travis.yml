@@ -1,0 +1,31 @@
+language: android
+
+env:
+  global:
+    - ANDROID_TARGET=android-22
+    - ANDROID_ABI=armeabi-v7a
+
+android:
+  components:
+    - platform-tools
+    - build-tools-26.0.1
+    - android-26
+    - android-22
+    - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+    - extra-android-support
+
+before_install:
+    - chmod +x gradlew
+
+before_script:
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
+
+script:
+  - ./gradlew connectedCheck
+
+branches:
+  only:
+    - master
