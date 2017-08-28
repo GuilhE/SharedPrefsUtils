@@ -5,6 +5,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.dicedmelon.gradle:jacoco-android:0.1.2'
     }
 }
 
@@ -23,10 +24,6 @@ allprojects {
         options.addStringOption('encoding', 'UTF-8')
     }
 }
-
-//task clean(type: Delete) {
-//    delete rootProject.buildDir
-//}
 
 ext {
     minSdkVersion = 19
