@@ -1,5 +1,5 @@
 # Android Utils:
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils--lib-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
 A set of utility classes to hopefully help you save your time. 
 
