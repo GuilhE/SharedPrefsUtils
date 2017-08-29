@@ -42,6 +42,12 @@ public class SharedPrefsUtilsInstrumentedTests {
         mPrefs.edit().clear().apply();
     }
 
+    @Test
+    public void instanceTest() {
+        assertNotNull(new SharedPrefsUtils());
+    }
+
+    @Test
     public void putObjectWithNullValue() throws Exception {
         SharedPrefsUtils.putObject(mPrefs, "key", null);
     }
