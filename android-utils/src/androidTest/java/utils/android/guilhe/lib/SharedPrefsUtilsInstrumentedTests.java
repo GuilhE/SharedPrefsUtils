@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import org.junit.Before;
 import org.junit.Rule;
@@ -27,7 +28,7 @@ import static org.junit.Assert.assertNotNull;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class InstrumentedTests {
+public class SharedPrefsUtilsInstrumentedTests {
 
     private SharedPreferences mPrefs;
 
@@ -116,8 +117,8 @@ public class InstrumentedTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException8() throws Exception {
-        SharedPrefsUtils.putObject(null, null, int.class, null);
+    public void putObjectException9() throws Exception {
+        SharedPrefsUtils.putObject(mPrefs, "key", int.class, null);
     }
 
     @Test
@@ -168,7 +169,7 @@ public class InstrumentedTests {
         SharedPrefsUtils.putObject(mPrefs, "key", list);
 
         exception.expect(JsonParseException.class);
-        SharedPrefsUtils.getObject(mPrefs, "key", float.class, 1f);
+        SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<Float>(){}, 1f);
     }
 
     @Test
