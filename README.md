@@ -1,5 +1,5 @@
 # Android Utils:
-[![Build Status](https://travis-ci.org/GuilhE/android-utils-lib.svg?branch=master)](https://travis-ci.org/GuilhE/android-utils-lib)  [![codecov](https://codecov.io/gh/GuilhE/android-utils-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/android-utils-lib)  [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils--lib-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+[![Build Status](https://travis-ci.org/GuilhE/android-utils-lib.svg?branch=master)](https://travis-ci.org/GuilhE/android-utils-lib)  [![codecov](https://codecov.io/gh/GuilhE/android-utils-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/android-utils-lib)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils--lib-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
 A set of utility classes to hopefully help you save your time. 
 
@@ -13,10 +13,10 @@ A set of utility classes to hopefully help you save your time.
 The first step is to include AndroidUtils into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-compile 'com.github.guilhe:android-utils:1.0.0'
+compile 'com.github.guilhe:android-utils:1.0.1'
 ```
-
-The second is to start using it :)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)
+## Sample usage
 
 #### SharedPrefsUtils
 
@@ -85,36 +85,7 @@ Will throw `JsonParseException`.
 
 ## Binaries
 
-Binaries and dependency information for Gradle, Maven, Ivy and others can be found at [https://search.maven.org](https://search.maven.org/#artifactdetails%7Ccom.github.guilhe%7Candroid-utils%7C1.0.0%7Caar).
-
-For Gradle:
-
-```groovy
-repositories {
-    jcenter()
- }
-
-dependencies {
-    compile 'com.github.guilhe:android-utils:1.0.0'
-}
-```
-
-and for Maven:
-```groovy
-<dependency>
-    <groupId>com.github.guilhe</groupId>
-    <artifactId>android-utils</artifactId>
-    <version>1.0.0</version>
-    <type>pom</type>
-</dependency>
-```
-
-and for Ivy:
-```groovy
-<dependency org='com.github.guilhe' name='android-utils' rev='1.0.0'>
-  <artifact name='android-utils' ext='pom' ></artifact>
-</dependency>
-```
+Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/#artifactdetails%7Ccom.github.guilhe%7Candroid-utils%7C1.0.0%7Caar).
 
 <a href='https://bintray.com/gdelgado/android/android-utils?source=watch' alt='Get automatic notifications about new "android-utils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
