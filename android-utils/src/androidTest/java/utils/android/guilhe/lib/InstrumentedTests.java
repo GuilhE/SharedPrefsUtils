@@ -14,13 +14,12 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Instrumentation test, which will execute on an Android device.
@@ -40,6 +39,10 @@ public class InstrumentedTests {
         Context appContext = InstrumentationRegistry.getTargetContext();
         mPrefs = appContext.getSharedPreferences("utils_test", Context.MODE_PRIVATE);
         mPrefs.edit().clear().apply();
+    }
+
+    public void putObjectWithNullValue() throws Exception {
+        SharedPrefsUtils.putObject(mPrefs, "key", null);
     }
 
     @Test
@@ -112,6 +115,11 @@ public class InstrumentedTests {
         SharedPrefsUtils.putObject(null, "key", int.class);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void putObjectException8() throws Exception {
+        SharedPrefsUtils.putObject(null, null, int.class, null);
+    }
+
     @Test
     public void getObjectWithClass() throws Exception {
         assertNotNull(SharedPrefsUtils.getObject(null, null, int.class, 1));
@@ -142,7 +150,8 @@ public class InstrumentedTests {
         list.add(1);
         SharedPrefsUtils.putObject(mPrefs, "key", list);
 
-        assertEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<List<Integer>>(){}, new ArrayList<Integer>()));
+        assertEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<List<Integer>>() {
+        }, new ArrayList<Integer>()));
         assertNotEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", List.class, new ArrayList<Integer>()));
     }
 
@@ -162,12 +171,24 @@ public class InstrumentedTests {
         SharedPrefsUtils.getObject(mPrefs, "key", float.class, 1f);
     }
 
+    @Test
+    public void getObjectAssertNotNull() throws Exception {
+        SharedPrefsUtils.putObject(mPrefs, "key", 1);
+        int defaultVal = 2;
+        TypeToken<Integer> type = null;
+        assertEquals(defaultVal, (int) SharedPrefsUtils.getObject(null, "key", int.class, defaultVal));
+        assertEquals(defaultVal, (int) SharedPrefsUtils.getObject(mPrefs, null, int.class, defaultVal));
+        assertEquals(defaultVal, (int) SharedPrefsUtils.getObject(mPrefs, "", int.class, defaultVal));
+        assertEquals(defaultVal, (int) SharedPrefsUtils.getObject(mPrefs, "key", type, defaultVal));
+        assertEquals(defaultVal, (int) SharedPrefsUtils.getObject(mPrefs, "key", int.class, defaultVal, null));
+    }
+
     private static class MyObjectType implements Parcelable {
         private String mFieldString;
         private int mFieldInt;
         private boolean mFieldBoolean;
 
-        public MyObjectType(String fieldString, int fieldInt, boolean fieldBoolean) {
+        MyObjectType(String fieldString, int fieldInt, boolean fieldBoolean) {
             mFieldString = fieldString;
             mFieldInt = fieldInt;
             mFieldBoolean = fieldBoolean;
@@ -183,7 +204,6 @@ public class InstrumentedTests {
             if (mFieldInt != that.mFieldInt) return false;
             if (mFieldBoolean != that.mFieldBoolean) return false;
             return mFieldString != null ? mFieldString.equals(that.mFieldString) : that.mFieldString == null;
-
         }
 
         @Override
@@ -209,7 +229,7 @@ public class InstrumentedTests {
             dest.writeByte(this.mFieldBoolean ? (byte) 1 : (byte) 0);
         }
 
-        protected MyObjectType(Parcel in) {
+        MyObjectType(Parcel in) {
             this.mFieldString = in.readString();
             this.mFieldInt = in.readInt();
             this.mFieldBoolean = in.readByte() != 0;
