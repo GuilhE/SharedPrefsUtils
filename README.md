@@ -13,7 +13,7 @@ A set of utility classes to hopefully help you save your time.
 The first step is to include AndroidUtils into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-compile 'com.github.guilhe:android-utils:1.0.1'
+compile 'com.github.guilhe:android-utils:1.0.2'
 ```
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)
 ## Sample usage
@@ -85,7 +85,7 @@ Will throw `JsonParseException`.
 
 ## Binaries
 
-Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/#artifactdetails%7Ccom.github.guilhe%7Candroid-utils%7C1.0.0%7Caar).
+Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22).
 
 <a href='https://bintray.com/gdelgado/android/android-utils?source=watch' alt='Get automatic notifications about new "android-utils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
