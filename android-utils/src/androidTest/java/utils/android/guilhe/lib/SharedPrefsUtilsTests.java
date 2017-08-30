@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNotNull;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class SharedPrefsUtilsInstrumentedTests {
+public class SharedPrefsUtilsTests {
 
     private SharedPreferences mPrefs;
 
@@ -48,12 +48,12 @@ public class SharedPrefsUtilsInstrumentedTests {
     }
 
     @Test
-    public void putObjectWithNullValue() throws Exception {
+    public void putObjectWithNullValue()  {
         SharedPrefsUtils.putObject(mPrefs, "key", null);
     }
 
     @Test
-    public void putObjectWithClass() throws Exception {
+    public void putObjectWithClass()  {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
 
         int a = 1;
@@ -66,7 +66,7 @@ public class SharedPrefsUtilsInstrumentedTests {
     }
 
     @Test
-    public void putObjectWithType() throws Exception {
+    public void putObjectWithType()  {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
         TypeToken<Integer> type = new TypeToken<Integer>() {
         };
@@ -128,7 +128,7 @@ public class SharedPrefsUtilsInstrumentedTests {
     }
 
     @Test
-    public void getObjectWithClass() throws Exception {
+    public void getObjectWithClass()  {
         assertNotNull(SharedPrefsUtils.getObject(null, null, int.class, 1));
         assertNotNull(SharedPrefsUtils.getObject(null, "", int.class, 1));
         assertNotNull(SharedPrefsUtils.getObject(null, "key", int.class, 1));
@@ -141,7 +141,7 @@ public class SharedPrefsUtilsInstrumentedTests {
     }
 
     @Test
-    public void getObjectWithType() throws Exception {
+    public void getObjectWithType()  {
         List<MyObjectType> list = new ArrayList<>();
         list.add(new MyObjectType("string", 1, true));
         SharedPrefsUtils.putObject(mPrefs, "key", list);
@@ -152,7 +152,7 @@ public class SharedPrefsUtilsInstrumentedTests {
     }
 
     @Test
-    public void getObjectWithType2() throws Exception {
+    public void getObjectWithType2()  {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         SharedPrefsUtils.putObject(mPrefs, "key", list);
@@ -175,11 +175,12 @@ public class SharedPrefsUtilsInstrumentedTests {
         SharedPrefsUtils.putObject(mPrefs, "key", list);
 
         exception.expect(JsonParseException.class);
-        SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<Float>(){}, 1f);
+        SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<Float>() {
+        }, 1f);
     }
 
     @Test
-    public void getObjectAssertNotNull() throws Exception {
+    public void getObjectAssertNotNull() {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
         int defaultVal = 2;
         TypeToken<Integer> type = null;
