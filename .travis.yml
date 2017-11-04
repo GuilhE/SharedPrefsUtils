@@ -1,4 +1,8 @@
 language: android
+dist: trusty
+
+jdk:
+  - oraclejdk8
 
 env:
   global:
@@ -7,15 +11,20 @@ env:
 
 android:
   components:
+    - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
     - platform-tools
     - build-tools-26.0.1
-    - android-26
+    - build-tools-26.0.2
     - android-22
+    - android-26
     - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
     - extra-android-support
+  licenses:
+    - 'android-sdk-license-.+'
+    - '.+'
 
 before_install:
-    - chmod +x gradlew
+  - chmod +x gradlew
 
 before_script:
   - ./gradlew build jacocoTestReport assembleAndroidTest
@@ -28,7 +37,7 @@ script:
   - ./gradlew connectedCheck
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 
 branches:
   only:

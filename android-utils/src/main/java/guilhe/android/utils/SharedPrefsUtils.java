@@ -7,12 +7,11 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-
 /**
  * Created by gdelgado on 18/08/2017.
  */
 
+@SuppressWarnings({"WeakerAccess", "UnusedReturnValue", "DefaultFileTemplate"})
 public class SharedPrefsUtils {
 
     private static final String TAG = SharedPrefsUtils.class.getSimpleName();
@@ -52,7 +51,7 @@ public class SharedPrefsUtils {
         if (gson == null) {
             throw new IllegalArgumentException("Gson must not be null");
         }
-        Log.v(TAG, "> putObject, storing " + (object == null ? "null object" : object.toString()) + " with key \"" + key + "\"");
+        Log.i(TAG, "> putObject, storing " + (object == null ? "null object" : object.getClass().getSimpleName()) + " with key \"" + key + "\"");
         return prefs.edit().putString(key, gson.toJson(object)).commit();
     }
 

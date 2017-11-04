@@ -1,11 +1,11 @@
 # AndroidUtils:
-[![Build Status](https://travis-ci.org/GuilhE/android-utils-lib.svg?branch=master)](https://travis-ci.org/GuilhE/android-utils-lib)  [![codecov](https://codecov.io/gh/GuilhE/android-utils-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/android-utils-lib)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils--lib-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+[![Build Status](https://travis-ci.org/GuilhE/android-utils-lib.svg?branch=master)](https://travis-ci.org/GuilhE/android-utils-lib)  [![codecov](https://codecov.io/gh/GuilhE/android-utils-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/android-utils-lib)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/android-utils-lib?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/android-utils-lib&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils--lib-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
 A set of utility classes to hopefully help you save your time. 
 
 #### Version 1.x
-
-  - **August, 2017** - SharedPrefsUtils
+  - **November, 2017**  - Gradle update, added Codacy.
+  - **August, 2017**    - SharedPrefsUtils.
 
 
 ## Getting started
@@ -13,7 +13,7 @@ A set of utility classes to hopefully help you save your time.
 The first step is to include AndroidUtils into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-compile 'com.github.guilhe:android-utils:${LATEST_VERSION}'
+implementation 'com.github.guilhe:android-utils:${LATEST_VERSION}'
 ```
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)
 ## Sample usage

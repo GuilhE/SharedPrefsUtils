@@ -1,4 +1,4 @@
-package guilhe.android.utils;
+package utils.android.guilhe.lib;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,8 +7,8 @@ import android.os.Parcelable;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
+import guilhe.android.utils.SharedPrefsUtils;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -48,12 +48,13 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test
-    public void putObjectWithNullValue()  {
+    public void putObjectWithNullValue() {
         SharedPrefsUtils.putObject(mPrefs, "key", null);
+        assertEquals("null", mPrefs.getString("key", null));
     }
 
     @Test
-    public void putObjectWithClass()  {
+    public void putObjectWithClass() {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
 
         int a = 1;
@@ -66,7 +67,7 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test
-    public void putObjectWithType()  {
+    public void putObjectWithType() {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
         TypeToken<Integer> type = new TypeToken<Integer>() {
         };
@@ -128,7 +129,7 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test
-    public void getObjectWithClass()  {
+    public void getObjectWithClass() {
         assertNotNull(SharedPrefsUtils.getObject(null, null, int.class, 1));
         assertNotNull(SharedPrefsUtils.getObject(null, "", int.class, 1));
         assertNotNull(SharedPrefsUtils.getObject(null, "key", int.class, 1));
@@ -141,7 +142,7 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test
-    public void getObjectWithType()  {
+    public void getObjectWithType() {
         List<MyObjectType> list = new ArrayList<>();
         list.add(new MyObjectType("string", 1, true));
         SharedPrefsUtils.putObject(mPrefs, "key", list);
@@ -152,7 +153,7 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test
-    public void getObjectWithType2()  {
+    public void getObjectWithType2() {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         SharedPrefsUtils.putObject(mPrefs, "key", list);
@@ -179,6 +180,7 @@ public class SharedPrefsUtilsTests {
         }, 1f);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Test
     public void getObjectAssertNotNull() {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
@@ -209,9 +211,7 @@ public class SharedPrefsUtilsTests {
 
             MyObjectType that = (MyObjectType) o;
 
-            if (mFieldInt != that.mFieldInt) return false;
-            if (mFieldBoolean != that.mFieldBoolean) return false;
-            return mFieldString != null ? mFieldString.equals(that.mFieldString) : that.mFieldString == null;
+            return mFieldInt == that.mFieldInt && mFieldBoolean == that.mFieldBoolean && (mFieldString != null ? mFieldString.equals(that.mFieldString) : that.mFieldString == null);
         }
 
         @Override
