@@ -1,4 +1,4 @@
-package guilhe.android.utils;
+package com.github.guilhe.SharedPrefsUtils;
 
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken;
  * Created by gdelgado on 18/08/2017.
  */
 
-@SuppressWarnings({"WeakerAccess", "UnusedReturnValue", "DefaultFileTemplate"})
+@SuppressWarnings({"WeakerAccess", "UnusedReturnValue", "DefaultFileTemplate","LogNotTimber"})
 public class SharedPrefsUtils {
 
     private static final String TAG = SharedPrefsUtils.class.getSimpleName();
@@ -23,7 +23,6 @@ public class SharedPrefsUtils {
      * @param key    used to store the object.
      * @param object to be stored.
      * @return true if success, false otherwise.
-     *
      * @throws IllegalArgumentException if prefs, key or gson are null.
      */
     public static boolean putObject(SharedPreferences prefs, String key, Object object) {
@@ -38,7 +37,6 @@ public class SharedPrefsUtils {
      * @param object to be stored.
      * @param gson   custom instance.
      * @return true if success, false otherwise.
-     *
      * @throws IllegalArgumentException if prefs, key or gson are null.
      */
     public static boolean putObject(SharedPreferences prefs, String key, Object object, Gson gson) {

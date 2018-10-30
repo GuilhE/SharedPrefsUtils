@@ -1,4 +1,4 @@
-package utils.android.guilhe.lib;
+package com.github.guilhe.SharedPrefsUtils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,6 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-import guilhe.android.utils.SharedPrefsUtils;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -38,10 +37,11 @@ public class SharedPrefsUtilsTests {
     @Before
     public void init() {
         Context appContext = InstrumentationRegistry.getTargetContext();
-        mPrefs = appContext.getSharedPreferences("utils_test", Context.MODE_PRIVATE);
+        mPrefs = appContext.getSharedPreferences("test", Context.MODE_PRIVATE);
         mPrefs.edit().clear().apply();
     }
 
+    @SuppressWarnings("ObviousNullCheck")
     @Test
     public void instanceTest() {
         assertNotNull(new SharedPrefsUtils());
@@ -83,48 +83,48 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException0() throws Exception {
+    public void putObjectException0() {
         SharedPrefsUtils.putObject(null, null, int.class);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException1() throws Exception {
+    public void putObjectException1() {
         SharedPrefsUtils.putObject(null, null, new TypeToken<Integer>() {
         });
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException2() throws Exception {
+    public void putObjectException2() {
         SharedPrefsUtils.putObject(null, "", null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException3() throws Exception {
+    public void putObjectException3() {
         SharedPrefsUtils.putObject(mPrefs, null, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException4() throws Exception {
+    public void putObjectException4() {
         SharedPrefsUtils.putObject(null, "", int.class);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException5() throws Exception {
+    public void putObjectException5() {
         SharedPrefsUtils.putObject(mPrefs, "", int.class);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException6() throws Exception {
+    public void putObjectException6() {
         SharedPrefsUtils.putObject(mPrefs, null, int.class);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException7() throws Exception {
+    public void putObjectException7() {
         SharedPrefsUtils.putObject(null, "key", int.class);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void putObjectException9() throws Exception {
+    public void putObjectException9() {
         SharedPrefsUtils.putObject(mPrefs, "key", int.class, null);
     }
 
@@ -164,13 +164,13 @@ public class SharedPrefsUtilsTests {
     }
 
     @Test(expected = JsonParseException.class)
-    public void getObjectWithClassException() throws Exception {
+    public void getObjectWithClassException() {
         SharedPrefsUtils.putObject(mPrefs, "key", 1);
         SharedPrefsUtils.getObject(mPrefs, "key", boolean.class, false);
     }
 
     @Test
-    public void getObjectWithTypeException() throws Exception {
+    public void getObjectWithTypeException() {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         SharedPrefsUtils.putObject(mPrefs, "key", list);
@@ -222,6 +222,7 @@ public class SharedPrefsUtilsTests {
             return result;
         }
 
+        @SuppressWarnings("unused")
         public MyObjectType() {
         }
 

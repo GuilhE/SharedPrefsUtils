@@ -1,21 +1,22 @@
-# AndroidUtils:
-[![Build Status](https://travis-ci.org/GuilhE/android-utils-lib.svg?branch=master)](https://travis-ci.org/GuilhE/android-utils-lib)  [![codecov](https://codecov.io/gh/GuilhE/android-utils-lib/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/android-utils-lib)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/android-utils-lib?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/android-utils-lib&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils--lib-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+# SharedPrefsUtils:
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefsUtils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefsUtils&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
-A set of utility classes to hopefully help you save your time. 
+Save and load objects from SharedPreferences in a faster and simpler way.
 
 #### Version 1.x
-  - **November, 2017**  - Gradle update, added Codacy.
-  - **August, 2017**    - SharedPrefsUtils.
+    - November, 2018    - "Rebranding", changed lib name.
+    - November, 2017    - Gradle update, added Codacy.
+    - August, 2017      - SharedPrefsUtils.
 
 
 ## Getting started
 
-The first step is to include AndroidUtils into your project, for example, as a Gradle compile dependency:
+The first step is to include SharedPrefsUtils into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-implementation 'com.github.guilhe:android-utils:${LATEST_VERSION}'
+implementation 'com.github.guilhe:SharedPrefsUtils:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/android-utils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/android-utils/images/download.svg) ](https://bintray.com/gdelgado/android/android-utils/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefsUtils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22SharedPrefsUtils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefsUtils/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefsUtils/_latestVersion)
 ## Sample usage
 
 #### SharedPrefsUtils
@@ -45,20 +46,20 @@ When __not__ using primitive types you should use `TypeToken` instead of `T.clas
     public void testOne() throws Exception {
         List<Integer> list = new ArrayList<>();
         list.add(1);
-        SharedPrefsUtils.putObject(mPrefs, "key", list);
+        SharedPrefsUtils.putObject(prefs, "key", list);
         
-        assertEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<List<Integer>>(){}, new ArrayList<Integer>()));
-        assertNotEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", List.class, new ArrayList<Integer>()));
+        assertEquals(list, SharedPrefsUtils.getObject(prefs, "key", new TypeToken<List<Integer>>(){}, new ArrayList<Integer>()));
+        assertNotEquals(list, SharedPrefsUtils.getObject(prefs, "key", List.class, new ArrayList<Integer>()));
     }
     
     @Test
     public void testTwo() throws Exception {
         List<MyObjectType> list = new ArrayList<>();
         list.add(new MyObjectType("string", 1, true));
-        SharedPrefsUtils.putObject(mPrefs, "key", list);
+        SharedPrefsUtils.putObject(prefs, "key", list);
         
-        assertEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", new TypeToken<List<MyObjectType>>() {}, new ArrayList<MyObjectType>()));
-        assertNotEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", List.class, new ArrayList<MyObjectType>()));
+        assertEquals(list, SharedPrefsUtils.getObject(prefs, "key", new TypeToken<List<MyObjectType>>() {}, new ArrayList<MyObjectType>()));
+        assertNotEquals(list, SharedPrefsUtils.getObject(prefs, "key", List.class, new ArrayList<MyObjectType>()));
     }
     
     private static class MyObjectType implements Parcelable {
@@ -70,7 +71,7 @@ When __not__ using primitive types you should use `TypeToken` instead of `T.clas
 ```
 Both tests will ran to completion.
 
-Regarding `assertNotEquals(list, SharedPrefsUtils.getObject(mPrefs, "key", List.class, new ArrayList<Integer>()));` being true, I guess it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:
+Regarding `assertNotEquals(list, SharedPrefsUtils.getObject(prefs, "key", List.class, new ArrayList<Integer>()));` being true, I guess it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:
  _"Since Type is not parameterized by T, this method is type unsafe and should be used carefully"_.
  That's why I believe I'm getting `List<Double>` instead of `List<Integer>`.
 
@@ -85,9 +86,9 @@ Will throw `JsonParseException`.
 
 ## Binaries
 
-Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22android-utils%22).
+Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22SharedPrefsUtils%22).
 
-<a href='https://bintray.com/gdelgado/android/android-utils?source=watch' alt='Get automatic notifications about new "android-utils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
+<a href='https://bintray.com/gdelgado/android/SharedPrefsUtils?source=watch' alt='Get automatic notifications about new "SharedPrefsUtils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
 ## Dependencies
 
@@ -95,12 +96,12 @@ Additional binaries and dependency information for can be found at [https://sear
 
 ## Bugs and Feedback
 
-For bugs, questions and discussions please use the [Github Issues](https://github.com/GuilhE/android-utils-lib/issues).
+For bugs, questions and discussions please use the [Github Issues](https://github.com/GuilhE/SharedPrefsUtils/issues).
 
  
 ## LICENSE
 
-Copyright (c) 2017-present, AndroidUtils Contributors.
+Copyright (c) 2017-present, SharedPrefsUtils Contributors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
