@@ -1,6 +1,5 @@
 language: android
 dist: trusty
-sudo: true
 
 notifications:
   email: false
@@ -10,11 +9,12 @@ jdk:
 
 env:
   global:
-    - ANDROID_API_LEVEL=28
+    - ANDROID_API_LEVEL=26
     - ANDROID_BUILD_TOOLS_VERSION=28.0.3
     - EMU_NAME=test
     - EMU_API_LEVEL=22
     - EMU_ABI=armeabi-v7a
+#    - EMU_ABI=x86
 
 android:
   components:

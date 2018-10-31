@@ -1,4 +1,4 @@
-package com.github.guilhe.SharedPrefsUtils;
+package com.github.guilhe.sharedprefsutils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

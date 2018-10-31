@@ -86,7 +86,7 @@ Will throw `JsonParseException`.
 
 ## Binaries
 
-Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22SharedPrefsUtils%22).
+Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=a:SharedPrefsUtils).
 
 <a href='https://bintray.com/gdelgado/android/SharedPrefsUtils?source=watch' alt='Get automatic notifications about new "SharedPrefsUtils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
