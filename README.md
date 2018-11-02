@@ -16,7 +16,7 @@ The first step is to include SharedPrefsUtils into your project, for example, as
 ```groovy
 implementation 'com.github.guilhe:SharedPrefsUtils:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefsUtils/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.guilhe%22a%3A%22SharedPrefsUtils%22)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefsUtils/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefsUtils/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefsUtils/badge.svg)](https://search.maven.org/search?q=a:SharedPrefsUtils)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefsUtils/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefsUtils/_latestVersion)
 ## Sample usage
 
 #### SharedPrefsUtils
