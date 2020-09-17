@@ -8,6 +8,7 @@ Save and load objects from SharedPreferences in a faster and simpler way.
     - November, 2017    - Gradle update, added Codacy.
     - August, 2017      - SharedPrefsUtils.
 
+*__NOTE:__ this repo will not be updated you should switch to [kotlin version](https://github.com/GuilhE/SharedPrefs-ktx)*
 
 ## Getting started
 
