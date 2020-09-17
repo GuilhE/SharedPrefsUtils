@@ -1,5 +1,5 @@
-# SharedPrefsUtils:
-[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils) [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+# SharedPrefsUtils ([Kotlin version here!](https://github.com/GuilhE/SharedPrefs-ktx))
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
 Save and load objects from SharedPreferences in a faster and simpler way.
 
