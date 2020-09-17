@@ -1,5 +1,5 @@
 # SharedPrefsUtils:
-[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefsUtils?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefsUtils&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils) [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
 Save and load objects from SharedPreferences in a faster and simpler way.
 
